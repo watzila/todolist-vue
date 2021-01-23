@@ -1,4 +1,4 @@
-#用vue製作簡易todolist
+用vue製作簡易todolist
 ---------------------
 1.使用webpack vue-cli 創建專案
 
