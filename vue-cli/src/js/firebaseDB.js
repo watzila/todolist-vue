@@ -1,3 +1,4 @@
+//firebase資料庫會給你的一些個人設定
 var firebaseConfig = {
   apiKey: "AIzaSyBd-Ru8B4HXKbyvK2l1SwK8mII_L_VoChk",
   authDomain: "todolist-4eb21.firebaseapp.com",
@@ -12,7 +13,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-let database = firebase.database().ref("/todolist");
+let database = firebase.database().ref("/todolist"); //firebase資料庫路徑
 
 export default class FirebaseDB {
   //讀取
