@@ -4,4 +4,4 @@
 
 2.使用vueJS 創建專案
 
-資料庫使用firebase
+資料庫使用firebase做簡易的資料儲存功能
