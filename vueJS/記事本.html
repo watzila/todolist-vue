@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事本</title>
+
+    <link rel="stylesheet" type="text/css" href="記事本.css" />
+  </head>
+
+  <body>
+    <section id="todoapp">
+      <header>
+        <h1>記事本</h1>
+
+        <input type="text" autofocus="autofocus" autocomplete="off" placeholder="請輸入任務..." v-model="inputValue"
+          v-on:keydown.enter="add" />
+      </header>
+
+      <main>
+        <ul>
+          <li v-for="(item,index) in list" :key="item.id" v-cloak>
+            <div class="view">
+              <span>{{index+1}}.</span>
+              <label>{{item.msg}}</label>
+              <button class="destory" v-on:click="remove(item.id)">x</button>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <footer v-cloak>
+        <span v-show="list.length!=0"><strong>{{list.length}}</strong> items left</span>
+
+        <button v-on:click="clearAll" v-show="list.length!=0">Clear</button>
+      </footer>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="記事本db.js"></script>
+    <script src="記事本.js"></script>
+  </body>
+
+</html>
