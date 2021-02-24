@@ -5,7 +5,8 @@
     </header>
 
     <main>
-      <Add :addComment="addComment" />
+      <!--<Add :addComment="addComment" />-->
+      <Add @addComment="addComment" />
       <List :list="list" :deleteComment="deleteComment" />
     </main>
 
@@ -28,7 +29,7 @@ export default {
   data() {
     return {
       db: new FirebaseDB(), //new一個firebase class和資料庫連線
-      list: [], //存資料庫拿回來的資料
+      list: [] //存資料庫拿回來的資料
     };
   },
   //vue創建完執行
@@ -49,27 +50,27 @@ export default {
       this.db.clearListData();
     },
     //取得資料
-    getList: function (data = null) {
+    getList: function(data = null) {
       const newList = [];
 
       if (data != null) {
-        Object.keys(data).forEach((key) => {
+        Object.keys(data).forEach(key => {
           let d = {
             id: key,
-            msg: data[key],
+            msg: data[key]
           };
           newList.unshift(d);
         });
       }
 
       this.list = newList;
-    },
+    }
   },
   //組件
   components: {
     Add,
-    List,
-  },
+    List
+  }
 };
 </script>
 

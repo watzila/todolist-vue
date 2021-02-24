@@ -17,14 +17,14 @@
 export default {
   props: {
     //完整寫法
-    addComment: {
-      type: Function,
-      required: true,
-    },
+    //addComment: {
+    //  type: Function,
+    //  required: true,
+    //},
   },
   data() {
     return {
-      inputValue: "",
+      inputValue: ""
     };
   },
   methods: {
@@ -36,11 +36,11 @@ export default {
         return;
       }
 
-      this.addComment(inputValue);
-
+      //this.addComment(inputValue);
+      this.$emit("addComment", inputValue); //搭配@的自定義事件使用
       this.inputValue = "";
-    },
-  },
+    }
+  }
 };
 </script>
 
